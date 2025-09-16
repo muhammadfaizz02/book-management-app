@@ -1,7 +1,7 @@
 Book Management App
 Aplikasi manajemen buku dan peminjaman berbasis Laravel dengan API RESTful dan fitur autentikasi.
 
-Fitur
+📋 Fitur
 ✅ CRUD Manajemen Buku - Create, Read, Update, Delete buku
 
 ✅ Sistem Peminjaman Buku - User dapat meminjam dan mengembalikan buku
@@ -20,7 +20,7 @@ Fitur
 
 ✅ Database Seeding - Data dummy untuk testing dan development
 
-Teknologi yang Digunakan
+🛠️ Teknologi yang Digunakan
 Laravel 10+
 
 Laravel Sanctum (API Authentication)
@@ -33,7 +33,7 @@ Composer
 
 Laravel Queue System
 
-Instalasi
+📦 Instalasi
 Prerequisites
 Pastikan Anda telah menginstall:
 
@@ -90,7 +90,7 @@ bash
 php artisan queue:work
 Aplikasi akan berjalan di http://localhost:8000
 
-API Endpoints
+🌐 API Endpoints
 Authentication
 POST /api/register - Mendaftar user baru
 
@@ -123,7 +123,7 @@ Query Parameters untuk Books
 
 ?page=2 - Pagination
 
-Contoh Penggunaan API
+📖 Contoh Penggunaan API
 1. Register User
 bash
 curl -X POST http://localhost:8000/api/register \
@@ -165,7 +165,7 @@ curl -X POST http://localhost:8000/api/loans \
 bash
 curl -X GET http://localhost:8000/api/loans/1 \
   -H "Authorization: Bearer your_token_here"
-Data Default
+👥 Data Default
 Setelah menjalankan seeder, akan tersedia:
 
 Users
@@ -176,7 +176,7 @@ Admin: admin@example.com / password
 Books
 30 buku dummy dengan data acak
 
-Testing
+🧪 Testing
 Jalankan test suite dengan perintah:
 
 bash
@@ -193,12 +193,12 @@ Test mencakup:
 
 ✅ Autentikasi user
 
-Queue & Notifications
+⚡ Queue & Notifications
 Aplikasi menggunakan Laravel Queue untuk mengirim notifikasi email ketika user meminjam buku. Untuk testing, notifikasi akan dicatat di file log:
 
 bash
 tail -f storage/logs/laravel.log
-Struktur Database
+🗃️ Struktur Database
 Tables
 users - Tabel user
 
@@ -215,7 +215,7 @@ Book dapat dipinjam banyak User
 
 Relasi many-to-many melalui tabel pivot book_loans
 
-Validasi
+✅ Validasi
 Book Validation
 ✅ Title: required, string, max:255
 
@@ -232,7 +232,7 @@ Loan Validation
 
 ✅ User tidak dapat meminjam buku yang sama dua kali tanpa mengembalikan
 
-Troubleshooting
+🔧 Troubleshooting
 Error 404 pada API
 Pastikan route sudah terdaftar:
 
@@ -251,7 +251,7 @@ Pastikan queue worker sedang berjalan:
 
 bash
 php artisan queue:work
-Development
+🚀 Development
 Menambah Fitur Baru
 Buat migration jika perlu
 
@@ -264,11 +264,9 @@ Buat test untuk fitur baru
 Jalankan test untuk memastikan tidak ada regression
 
 Code Style
-Project mengikuti PSR-12 coding standard. Gunakan perintah berikut untuk check:
+Project mengikuti PSR-12 coding standard.
 
-bash
-composer lint
-Deployment
+🌐 Deployment
 Requirements untuk Production
 PHP 8.1+
 
@@ -294,18 +292,3 @@ php artisan storage:link
 Setup queue worker
 
 Setup web server (Nginx/Apache)
-
-Kontribusi
-Fork project
-
-Buat feature branch
-
-Commit changes
-
-Push ke branch
-
-Buat Pull Request
-
-License
-Project ini menggunakan MIT License.
-
