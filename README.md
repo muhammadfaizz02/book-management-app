@@ -2,6 +2,7 @@ Book Management App
 Aplikasi manajemen buku dan peminjaman berbasis Laravel dengan API RESTful dan fitur autentikasi.
 
 📋 Fitur
+
 ✅ CRUD Manajemen Buku - Create, Read, Update, Delete buku
 
 ✅ Sistem Peminjaman Buku - User dapat meminjam dan mengembalikan buku
@@ -91,6 +92,7 @@ php artisan queue:work
 Aplikasi akan berjalan di http://localhost:8000
 
 🌐 API Endpoints
+
 Authentication
 POST /api/register - Mendaftar user baru
 
@@ -124,6 +126,7 @@ Query Parameters untuk Books
 ?page=2 - Pagination
 
 📖 Contoh Penggunaan API
+
 1. Register User
 bash
 curl -X POST http://localhost:8000/api/register \
@@ -166,6 +169,7 @@ bash
 curl -X GET http://localhost:8000/api/loans/1 \
   -H "Authorization: Bearer your_token_here"
 👥 Data Default
+
 Setelah menjalankan seeder, akan tersedia:
 
 Users
@@ -177,6 +181,7 @@ Books
 30 buku dummy dengan data acak
 
 🧪 Testing
+
 Jalankan test suite dengan perintah:
 
 bash
@@ -194,11 +199,13 @@ Test mencakup:
 ✅ Autentikasi user
 
 ⚡ Queue & Notifications
+
 Aplikasi menggunakan Laravel Queue untuk mengirim notifikasi email ketika user meminjam buku. Untuk testing, notifikasi akan dicatat di file log:
 
 bash
 tail -f storage/logs/laravel.log
 🗃️ Struktur Database
+
 Tables
 users - Tabel user
 
@@ -217,6 +224,7 @@ Relasi many-to-many melalui tabel pivot book_loans
 
 ✅ Validasi
 Book Validation
+
 ✅ Title: required, string, max:255
 
 ✅ Author: required, string, max:255
@@ -233,6 +241,7 @@ Loan Validation
 ✅ User tidak dapat meminjam buku yang sama dua kali tanpa mengembalikan
 
 🔧 Troubleshooting
+
 Error 404 pada API
 Pastikan route sudah terdaftar:
 
@@ -252,6 +261,7 @@ Pastikan queue worker sedang berjalan:
 bash
 php artisan queue:work
 🚀 Development
+
 Menambah Fitur Baru
 Buat migration jika perlu
 
@@ -267,6 +277,7 @@ Code Style
 Project mengikuti PSR-12 coding standard.
 
 🌐 Deployment
+
 Requirements untuk Production
 PHP 8.1+
 
