@@ -3,29 +3,46 @@ Aplikasi manajemen buku dan peminjaman berbasis Laravel dengan API RESTful dan f
 
 Fitur
 ✅ CRUD Manajemen Buku - Create, Read, Update, Delete buku
+
 ✅ Sistem Peminjaman Buku - User dapat meminjam dan mengembalikan buku
+
 ✅ API RESTful - Endpoint API untuk semua operasi
+
 ✅ Autentikasi dengan Laravel Sanctum - Token-based authentication
+
 ✅ Search & Filter - Pencarian dan filter buku berdasarkan judul, penulis, tahun
+
 ✅ Queue & Jobs - Notifikasi email menggunakan queue system
+
 ✅ Unit Testing - Test coverage untuk fitur utama
+
 ✅ API Resources - Response API yang konsisten dan terstruktur
+
 ✅ Database Seeding - Data dummy untuk testing dan development
 
 Teknologi yang Digunakan
 Laravel 10+
+
 Laravel Sanctum (API Authentication)
+
 MySQL Database
+
 PHP 8.1+
+
 Composer
+
 Laravel Queue System
+
 Instalasi
 Prerequisites
 Pastikan Anda telah menginstall:
 
 PHP 8.1 atau lebih baru
+
 Composer
+
 MySQL Server
+
 Node.js (opsional, untuk frontend)
 
 Langkah-langkah Instalasi
@@ -167,9 +184,13 @@ php artisan test
 Test mencakup:
 
 ✅ Menambah buku baru
+
 ✅ Validasi input buku
+
 ✅ Meminjam buku
+
 ✅ Validasi stok buku
+
 ✅ Autentikasi user
 
 Queue & Notifications
@@ -180,25 +201,37 @@ tail -f storage/logs/laravel.log
 Struktur Database
 Tables
 users - Tabel user
+
 books - Data buku (title, author, year, isbn, stock)
+
 book_loans - Data peminjaman buku (relasi many-to-many)
+
 personal_access_tokens - Token authentication untuk Sanctum
 
 Relations
 User dapat meminjam banyak Book
+
 Book dapat dipinjam banyak User
+
 Relasi many-to-many melalui tabel pivot book_loans
 
 Validasi
 Book Validation
 ✅ Title: required, string, max:255
+
 ✅ Author: required, string, max:255
+
 ✅ Published Year: required, digits:4, min:1900, max:tahun sekarang
+
 ✅ ISBN: required, string, unique
+
 ✅ Stock: required, integer, min:0
+
 Loan Validation
 ✅ Book harus tersedia (stock > 0)
+
 ✅ User tidak dapat meminjam buku yang sama dua kali tanpa mengembalikan
+
 Troubleshooting
 Error 404 pada API
 Pastikan route sudah terdaftar:
@@ -221,9 +254,13 @@ php artisan queue:work
 Development
 Menambah Fitur Baru
 Buat migration jika perlu
+
 Buat model dan controller
+
 Definisikan route di routes/api.php
+
 Buat test untuk fitur baru
+
 Jalankan test untuk memastikan tidak ada regression
 
 Code Style
@@ -233,7 +270,6 @@ bash
 composer lint
 Deployment
 Requirements untuk Production
-
 PHP 8.1+
 
 MySQL 5.7+
@@ -244,12 +280,32 @@ Queue Worker (Supervisor recommended)
 
 Steps
 Clone repository
+
 composer install --optimize-autoloader --no-dev
+
 Setup .env file
+
 php artisan key:generate
+
 php artisan migrate --force
+
 php artisan storage:link
+
 Setup queue worker
+
 Setup web server (Nginx/Apache)
 
+Kontribusi
+Fork project
+
+Buat feature branch
+
+Commit changes
+
+Push ke branch
+
+Buat Pull Request
+
+License
+Project ini menggunakan MIT License.
 
